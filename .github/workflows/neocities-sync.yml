@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "*/30 * * * *"   # pull edits made on Neocities every 30 min
+    - cron: "7,37 * * * *"   # every 30 min, off the busy top of the hour
   workflow_dispatch:          # "Run workflow" button for an instant sync
 
 concurrency:
