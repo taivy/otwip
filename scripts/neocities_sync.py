@@ -22,7 +22,6 @@ import os
 import sys
 import time
 from pathlib import Path
-from urllib.parse import quote
 
 import requests
 
@@ -61,9 +60,7 @@ class Neocities:
     def __init__(self, api_key: str):
         self.s = requests.Session()
         self.s.headers["Authorization"] = f"Bearer {api_key}"
-        info = self._check(self.s.get(f"{API}/info", timeout=30))
-        self.sitename = info["info"]["sitename"]
-        self.base = f"https://{self.sitename}.neocities.org"
+        self._check(self.s.get(f"{API}/info", timeout=30))  # fail fast on a bad key
 
     @staticmethod
     def _check(r: requests.Response) -> dict:
@@ -78,16 +75,15 @@ class Neocities:
 
     def list(self) -> dict:
         body = self._check(self.s.get(f"{API}/list", timeout=60))
-        return {f["path"]: f["sha1"] for f in body["files"] if not f.get("is_directory")}
+        return {f["path"]: f["sha1_hash"] for f in body["files"] if not f.get("is_directory")}
 
     def download(self, path: str, expected_sha: str) -> bytes | None:
-        url = f"{self.base}/{quote(path)}"
-        for attempt in range(4):
-            r = self.s.get(url, params={"_sync": int(time.time())}, timeout=60,
-                           headers={"Cache-Control": "no-cache"})
+        for attempt in range(3):
+            r = self.s.get(f"{API}/download", params={"path": path}, timeout=120)
             if r.ok and sha1(r.content) == expected_sha:
                 return r.content
-            time.sleep(3 * (attempt + 1))  # CDN may still serve an older copy
+            print(f"  download {path}: HTTP {r.status_code}, retrying")
+            time.sleep(2 * (attempt + 1))
         return None
 
     def upload(self, files: dict[str, bytes]) -> None:
