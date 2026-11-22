@@ -271,6 +271,7 @@ header nav ul ul {
   border: var(--border);
   min-width: 100%;
   box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  z-index: 9;
 }
 
 header nav ul li:hover ul,
@@ -435,15 +436,14 @@ main h6 {
 
 /* Top A-Z Jump Bar */
 .alpha-jump-bar {
-  position: sticky;
-  top: 0;
+  position: relative;
   background: #f8f9fa;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #dcdcdc;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  z-index: 10;
+  z-index: 1;
 }
 
 .alpha-jump-bar a {
