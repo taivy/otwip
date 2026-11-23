@@ -8,11 +8,15 @@
  "epilogue/foxgICON.png": "d4fc5627bbf1f6227b493ede7a9de127a14727cb",
  "epilogue/foxglove.html": "647a53a3e073b71cb24d40a3b7e782cd2a8c1f31",
  "epilogue/style.css": "1c3a610d1a5b57bc00e5666222cae45107bff382",
- "gallery.html": "181c356e4a431d7ed6bbaadf6e9915aa30715713",
+ "gallery.html": "d2dcfef1cfd0e5fdd55786e086bda809f8cdb246",
+ "gallerystyle.css": "d56fc80aff2e9b0f1b48fe2bea1ec0403234e490",
  "index.html": "b379e39faa9be5ad99aacebdf104714d825cd017",
  "indexheader.png": "7f83a17e5a8f9a772c1c681730e72a78e1304e0e",
  "indexstyle.css": "f38822bc8204378fef9dfa482a3b534fe4f7ad29",
- "minicomics.html": "096e4cb803295575fad8775cbf2aa3527e81f6b2",
+ "minicomics.html": "5a710308d5422a460d0e0a231b9ea330a2fa2672",
+ "minicomics/MC1_1.png": "01dfe2ec8cc27327e446317e69b7612bdc31edf9",
+ "minicomics/MC1_2.png": "a1ffcca27dec4112c6fee791e2d8b26da02edb72",
+ "minicomics/MC1_3.png": "0ffff4db67ee83e5c11076fbca034da480f1ce21",
  "neocities.png": "fd2ee41b1922a39a716cacb88c323d613b0955e4",
  "not_found.html": "d7f004e9d3b2eaaa8827f741356f1122dc9eb030",
  "prologue/Bloodlines/rhinestone": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
@@ -28,6 +32,6 @@
  "prologue/timeline.html": "c653da62b48323a215dac14278375cd6877ce007",
  "release-order.html": "27f3b121645558376b9c1324ebf128005a90719f",
  "robots.txt": "c00e58f796b660a63abb0f2f51e032fae440891f",
- "shared.css": "9056ccf276fb92966a4fcd821091c1169537d3c7",
- "style.css": "68412d5b820c12d81e1d6fcf33bd0bb89a2aa94b"
+ "shared.css": "7c3b72cc20441c45bdfd732002c8c35167c1dc92",
+ "style.css": "83d0d756d94e713d78a47257a333278220dc0211"
 }

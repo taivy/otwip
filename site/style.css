@@ -56,6 +56,11 @@ body {
   
 }
 
+.wrapper {
+  display: grid;
+  margin: 1px;
+}
+
 ::selection {
   /* (Text highlighted by the user) */
   background: rgba(0, 0, 0, 0.2);
@@ -89,7 +94,7 @@ a:focus {
 /* -------------------------------------------------------- */
 
 .layout {
-  width: 1000px;
+  width: 1300px;
   display: grid;
   grid-gap: var(--margin);
   grid-template: "header header" auto "main rightSidebar" auto "footer footer" auto / auto var(--sidebar-width);
