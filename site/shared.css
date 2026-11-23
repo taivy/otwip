@@ -55,12 +55,6 @@ body {
   
 }
 
-::selection {
-  /* (Text highlighted by the user) */
-  background: #3cb371;
-  color: #000000;
-}
-
 mark {
   /* Text highlighted by using the <mark> element */
   text-shadow: 1px 1px 4px var(--link-color);

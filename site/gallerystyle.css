@@ -1,7 +1,5 @@
 /* -------------------------------------------------------- */
 /* EPILOGUE CAST PAGE                                         */
-/* Loads the Epilogue theme (epilogue/style.css, which loads  */
-/* /shared.css), then adds only what the cast page needs.     */
 /* -------------------------------------------------------- */
 
 @import url("/epilogue/style.css");

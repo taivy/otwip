@@ -28,3 +28,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: #3cb371;
+  color: #000000;
+}

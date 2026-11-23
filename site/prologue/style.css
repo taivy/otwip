@@ -29,6 +29,12 @@ body {
   background-size: cover;
 }
 
+::selection {
+  /* (Text highlighted by the user) */
+  background: #3cb371;
+  color: #000000;
+}
+
 #search-form {
   display: flex;
   gap: 5px;
