@@ -6,18 +6,6 @@
 
 @import url("/epilogue/style.css");
 
-/* Card grid */
-.wrapper {
-  display: grid;
-  margin: auto;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 5px;
-  border: 1px dashed #5CF735;
-  justify-content:center;
-  align-items:center;
-}
-
 /* Links: */
 a::selection {
   color: #00FFFF;
@@ -42,9 +30,5 @@ a::selection {
   .layout {
     grid-template: "header" auto  "rightSidebar" auto "main" auto "leftSidebar" auto "footer" auto / 1fr;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .wrapper {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
