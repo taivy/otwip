@@ -33,7 +33,7 @@ jobs:
           NEOCITIES_API_KEY: ${{ secrets.NEOCITIES_API_KEY }}
         run: python scripts/neocities_sync.py
 
-      - name: Commit changes pulled from Neocities
+      - name: Commit sync results
         run: |
           git config user.name "neocities-sync[bot]"
           git config user.email "neocities-sync@users.noreply.github.com"
@@ -42,6 +42,13 @@ jobs:
             echo "Nothing to commit."
             exit 0
           fi
-          git commit -m "Sync from Neocities"
+          # Files under site/ changed only if something came down from Neocities.
+          # A state-only change means the repo's files were uploaded to Neocities.
+          if git diff --cached --quiet -- site; then
+            msg="Sync to Neocities (record uploaded files)"
+          else
+            msg="Sync from Neocities"
+          fi
+          git commit -m "$msg"
           git pull --rebase origin main
           git push origin HEAD:main
