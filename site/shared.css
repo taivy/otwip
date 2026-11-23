@@ -35,6 +35,16 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  justify-content:center;
+  align-items:center;
+}
+
 body {
   display: flex;
   align-items: flex-start;
@@ -53,6 +63,12 @@ body {
   background-size: cover;
   
   
+}
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: #3cb371;
+  color: #000000;
 }
 
 mark {
@@ -87,13 +103,8 @@ a:focus {
   width: 1300px;
   display: grid;
   grid-gap: var(--margin);
-  grid-template: "header header" auto "main rightSidebar" auto "footer footer" auto / auto var(--sidebar-width);
+  grid-template: "header header" auto "footer footer" auto;
   /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
-}
-
-/* Pages without a sidebar: <div class="layout no-sidebar"> */
-.layout.no-sidebar {
-  grid-template: "header" auto "main" auto "footer" auto / auto;
 }
 
 main {
@@ -130,92 +141,6 @@ header {
 .header-image img {
   width: 100%;
   height: auto;
-}
-
-/* -------------------------------------------------------- */
-/* SIDEBARS */
-/* -------------------------------------------------------- */
-
-aside {
-  grid-area: aside;
-  border: var(--border);
-  border-radius: var(--round-borders);
-  overflow: hidden;
-  background: var(--sidebar-background-color);
-  padding: var(--padding);
-  color: var(--sidebar-text-color);
-}
-
-aside hr {
-  border: 0;
-  border-top: var(--border);
-  margin: 0.1em 0;
-}
-
-.left-sidebar {
-  grid-area: leftSidebar;
-}
-
-.right-sidebar {
-  grid-area: rightSidebar;
-}
-
-.sidebar-title {
-  font-weight: bold;
-  font-size: 2.2em;
-  font-family: var(--heading-font);
-  justify-content: center;
-}
-
-.sidebar-image {
-  display: inline;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-}
-
-.sidebar-section:not(:last-child) {
-  margin-bottom: 3em;
-}
-
-.sidebar-section ul,
-.sidebar-section ol {
-  padding-left: 1.5em;
-}
-
-.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
-  margin-top: 10px;
-}
-
-/* Sidebar Blockquote: */
-
-.sidebar-section blockquote {
-  background: rgba(0, 0, 0, 0.1);
-  padding: 8px;
-  margin: 1em 0;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.sidebar-section blockquote > *:first-child {
-  margin-top: 0;
-}
-
-.sidebar-section blockquote > *:last-child {
-  margin-bottom: 0;
-}
-
-/* Site Button: */
-
-.site-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.site-button textarea {
-  font-family: monospace;
-  font-size: 0.7em;
 }
 
 /* -------------------------------------------------------- */
@@ -527,26 +452,6 @@ main h6 {
   max-height: auto;
 }
 
-.img-wrapper {
-  display: grid;
-  margin: 1px;
-}
-
-/* -------------------------------------------------------- */
-/* CARD GRID (cast list)                                    */
-/* -------------------------------------------------------- */
-
-.card-grid {
-  display: grid;
-  margin: auto;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 5px;
-  border: var(--border);
-  justify-content: center;
-  align-items: center;
-}
-
 /* -------------------------------------------------------- */
 /* ACCESSIBILITY */
 /* -------------------------------------------------------- */
@@ -615,6 +520,7 @@ main h6 {
 
   main {
     max-height: none;
+    width: var;
     padding: 15px;
   }
 
@@ -624,10 +530,6 @@ main h6 {
 
   .images img {
     width: auto;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   #skip-to-content-link {
