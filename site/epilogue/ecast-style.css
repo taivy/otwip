@@ -12,23 +12,8 @@ a::selection {
   text-decoration: none;
 }
 
-/* One column, no sidebars */
-.layout {
-  grid-template: "header" auto "main" auto "footer" auto / auto;
-}
-
+/* Hide sidebars */
 .left-sidebar,
 .right-sidebar {
   display:none;
-}
-
-/* -------------------------------------------------------- */
-/* MOBILE RESPONSIVE */
-/* -------------------------------------------------------- */
-
-@media (max-width: 800px) {
-  .layout {
-    grid-template: "header" auto  "rightSidebar" auto "main" auto "leftSidebar" auto "footer" auto / 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
 }

@@ -101,6 +101,11 @@ a:focus {
   /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
 }
 
+/* Pages without a sidebar: <div class="layout no-sidebar"> */
+.layout.no-sidebar {
+  grid-template: "header" auto "main" auto "footer" auto / auto;
+}
+
 main {
   grid-area: main;
   overflow-y: auto;
