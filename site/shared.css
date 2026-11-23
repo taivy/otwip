@@ -103,7 +103,7 @@ a:focus {
   width: 1300px;
   display: grid;
   grid-gap: var(--margin);
-  grid-template: "header header" auto "footer footer" auto;
+  grid-template: "header header" auto "main rightSidebar" auto "footer footer" auto / auto var(--sidebar-width);
   /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
 }
 

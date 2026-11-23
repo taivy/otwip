@@ -1,10 +1,42 @@
 /* -------------------------------------------------------- */
-/* EPILOGUE CAST PAGE                                         */
-/* Loads the Epilogue theme (epilogue/style.css, which loads  */
-/* /shared.css), then adds only what the cast page needs.     */
+/* GALLERY PAGE CSS                                          */
+/* Loads the shared style (/shared.css), then adds only what */
+/* the cast page needs.                                     */
 /* -------------------------------------------------------- */
 
-@import url("/epilogue/style.css");
+@import url("/shared.css");
+
+/* Variables are used like this: var(--text-color) */
+:root {
+  /* Background Colors: */
+  --background-color: #000000;
+  --content-background-color: #2A272A;
+  --sidebar-background-color: #2A272A;
+
+  /* Text Colors: */
+  --text-color: #5E874B;
+  --sidebar-text-color: #5E874B;
+  --link-color: #5CF735;
+  --link-color-hover: #FEFFC6;
+
+  /* Borders: */
+  --border: 1px dashed #5CF735;
+}
+
+body {
+  background-image: none;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: #3cb371;
+  color: #000000;
+}
+
 
 /* Card grid */
 .wrapper {
