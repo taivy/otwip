@@ -1,7 +1,7 @@
 /* -------------------------------------------------------- */
 /* GALLERY PAGE CSS                                          */
 /* Loads the shared style (/shared.css), then adds only what */
-/* the cast page needs.                                     */
+/* the gallery page needs.                                   */
 /* -------------------------------------------------------- */
 
 @import url("/shared.css");
@@ -11,11 +11,9 @@
   /* Background Colors: */
   --background-color: #000000;
   --content-background-color: #2A272A;
-  --sidebar-background-color: #2A272A;
 
   /* Text Colors: */
   --text-color: #5E874B;
-  --sidebar-text-color: #5E874B;
   --link-color: #5CF735;
   --link-color-hover: #FEFFC6;
 
@@ -38,6 +36,18 @@ body {
 }
 
 
+/* Card grid */
+.wrapper {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  border: 1px dashed #5CF735;
+  justify-content:center;
+  align-items:center;
+}
+
 /* Links: */
 ::selection {
   color: #00FFFF;
@@ -45,7 +55,95 @@ body {
 }
 
 
-.left-sidebar,
-.right-sidebar {
-  display:none;
+.layout {
+  grid-template: "header" auto "main" auto "footer" auto ;
+}
+
+/* Pages without a sidebar: <div class="layout no-sidebar"> */
+.layout.no-sidebar {
+  grid-template: "header" auto "main" auto "footer" auto / auto;
+}
+
+
+/* -------------------------------------------------------- */
+/* MARQUEE                                                  */
+/* -------------------------------------------------------- */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4-column grid */
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  column-gap: 20px; /* Controls space around the line */
+  column-rule: 1px dashed #ccc; /* Draws a line down the center of the gap */
+}
+
+.marquee-h1 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.marquee {
+  width: auto;
+  overflow: hidden;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+  &:hover {
+    .marquee-content {
+      animation-play-state: paused;
+      }
+  }
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+
+  img {
+    height: 100px;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* -------------------------------------------------------- */
+/* MOBILE RESPONSIVE */
+/* -------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template: "header" auto  "rightSidebar" auto "main" auto "leftSidebar" auto "footer" auto / 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Responsive: Stack into 2 column on mobile */
+@media (max-width: 600px) {
+  .marquee-container {
+    grid-template-columns: 2fr;
+  }
+}
 }
