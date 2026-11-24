@@ -108,6 +108,8 @@ body {
 
 .marquee-content {
   display: inline-flex;
+  /* /marquee.js replaces the 35s (change the speed there),
+     35s is only used if the script does not load */
   animation: marquee 35s linear infinite;
 
   img {
