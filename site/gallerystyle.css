@@ -79,7 +79,7 @@ body {
   overflow: hidden;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4-column grid */
+  grid-template-columns: repeat(3, 1fr); /* 3-column grid */
   gap: 16px;
   max-width: 1000px;
   margin: 0 auto;
@@ -90,13 +90,13 @@ body {
 .marquee-h1 {
   font-size: 25px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .marquee {
   width: auto;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 10px 0;
   box-sizing: border-box;
 
   &:hover {
@@ -113,7 +113,7 @@ body {
   animation: marquee 35s linear infinite;
 
   img {
-    height: 100px;
+    width: 275px;
     margin-right: 20px;
     vertical-align: middle;
   }

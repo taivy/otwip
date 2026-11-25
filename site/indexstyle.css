@@ -21,7 +21,7 @@ body {
 
 ::selection {
   /* (Text highlighted by the user) */
-  background: #3cb371;
+  background: #666;
   color: #000000;
 }
 

@@ -14,7 +14,7 @@
   /* Text Colors: */
   --text-color: #f324e7;
   --sidebar-text-color: #f324e7;
-  --link-color: #be51ffff;
+  --link-color: #be51ff;
   --link-color-hover: #90ec00;
 
   /* Borders: */
@@ -58,6 +58,13 @@ footer {
 
 .sidebar-title {
   font-size: 1.5em;
+}
+
+.sidebar-section {
+  height:280px;
+  overflow-y:scroll;
+  scrollbar-color: #f324e7 #080022;
+  scrollbar-width: thin;
 }
 
 .sidebar-section blockquote {
