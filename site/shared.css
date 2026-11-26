@@ -210,7 +210,7 @@ aside hr {
 /* SIDEBAR MARQUEE FOR CHARA PAGES */
 /* --------------- */
 
-/* Lets the images below size themselves from this box's width (the "cqw" unit) */
+/* Lets the images below size themselves from this box's width */
 .sidebar-section blockquote:has(> .sidebar-marquee) {
   container-type: inline-size;
 }
@@ -220,25 +220,22 @@ aside hr {
 .sidebar-marquee {
   display: inline-flex;
   align-items: center;
-  animation: sidebar-marquee 20s linear infinite; /* bigger number = slower */
+  animation: sidebar-marquee 20s linear infinite;
 
   img {
     display: block;
-    /* All images get the same height: the height a widescreen (16:9) picture
-       has when it is exactly as wide as the box. 100cqw = the box's width,
-       so it follows the sidebar on any page and any screen. */
+    /* All images get the same height: the height of widescreen (16:9) picture
+       when its width is as the box's. 100cqw = the box width */
     height: calc(100cqw * 9 / 16);
-    width: auto; /* width follows each image's own shape */
+    width: auto;
     margin-right: 20px;
   }
 }
 
-/* Pause while the mouse is over it, like the gallery marquees */
 .sidebar-section blockquote:hover .sidebar-marquee {
   animation-play-state: paused;
 }
 
-/* Own name, so it can't clash with "@keyframes marquee" in gallerystyle.css */
 @keyframes sidebar-marquee {
   0% {
     transform: translateX(0);
