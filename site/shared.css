@@ -225,7 +225,7 @@ aside hr {
   img {
     display: block;
     /* All images get the same height: the height of widescreen (16:9) picture
-       when it's it's width is as the box's. 100cqw = the box width */
+       when it's width is as the box's. 100cqw = the box width */
     height: calc(100cqw * 9 / 16);
     width: auto;
     margin-right: 20px;
