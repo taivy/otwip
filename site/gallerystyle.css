@@ -10,15 +10,15 @@
 :root {
   /* Background Colors: */
   --background-color: #000000;
-  --content-background-color: #2A272A;
+  --content-background-color: #080022;
 
   /* Text Colors: */
-  --text-color: #5E874B;
-  --link-color: #5CF735;
-  --link-color-hover: #FEFFC6;
+  --text-color: #f324e7;
+  --link-color: #be51ff;
+  --link-color-hover: #90ec00;
 
   /* Borders: */
-  --border: 1px dashed #5CF735;
+  --border: 1px dashed #be51ff;
 }
 
 body {

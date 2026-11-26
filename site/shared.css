@@ -174,6 +174,7 @@ aside hr {
   max-width: 100%;
 }
 
+
 .sidebar-section:not(:last-child) {
   margin-bottom: 3em;
 }
@@ -204,6 +205,31 @@ aside hr {
 .sidebar-section blockquote > *:last-child {
   margin-bottom: 0;
 }
+
+/* --------------- */
+/* SIDEBAR MARQUEE FOR CHARA PAGES */
+/* --------------- */
+
+.sidebar-marquee {
+display: inline-flex;
+animation: marquee 20s linear infinite;
+
+  img {
+    width: 300px;
+    margin-right: 20px;
+    vertical-align: center;
+  } 
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 /* Site Button: */
 
