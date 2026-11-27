@@ -228,7 +228,7 @@ aside hr {
        when its width is as the box's. 100cqw = the box width */
     height: calc(100cqw * 9 / 16);
     width: auto;
-    margin-right: 20px;
+    margin-right: 10px;
   }
 }
 
