@@ -33,15 +33,6 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#search-form {
-  display: flex;
-  gap: 5px;
-}
-
-#search-input {
-  padding: 4px 8px;
-  font-size: 0.9rem;
-}
 
 /* Links: no underline */
 a {
